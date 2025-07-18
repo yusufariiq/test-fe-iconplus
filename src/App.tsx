@@ -1,4 +1,5 @@
 import './App.css'
+import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/common/navbar'
 import Sidebar from './components/common/sidebar'
 import { MeetingRoom } from './pages/meeting-room'
@@ -8,10 +9,12 @@ function App() {
   return (
     <>
       <Navbar />
-      <div className="flex">
+      <main className="flex">
         <Sidebar/>
-        <MeetingRoom/>
-      </div>
+        <Routes>
+          <Route path='/' element={<MeetingRoom/>}/>
+        </Routes>
+      </main>
     </>
   )
 }
