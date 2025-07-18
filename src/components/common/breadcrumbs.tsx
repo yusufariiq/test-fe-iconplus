@@ -1,4 +1,5 @@
 import { ChevronRight } from "lucide-react"
+import { Link } from "react-router-dom"
 
 interface BreadcrumbsItem {
   label: string
@@ -17,9 +18,9 @@ export default function Breadcrumbs({items}: BreadcrumbsProps) {
         <div key={index} className="flex items-center">
           {index > 0 && <ChevronRight className="size-4"/>}
           {item.href && !item.isActive ? (
-            <a href={item.href} className="hover:text-gray-700 transition-colors">
+            <Link to={item.href} className="hover:text-gray-700 transition-colors">
               {item.label}
-            </a>
+            </Link>
           ) : (
             <span className={item.isActive ? "text-cyan-600 font-medium" : ""}>
               {item.label}
