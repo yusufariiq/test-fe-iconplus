@@ -9,7 +9,7 @@ export function MeetingRoom() {
 
     const breadcrumbsItems = showBookingForm ? 
     [
-        { label: "Ruang Meeting", href: "/ruang-meeting" },
+        { label: "Ruang Meeting", href: "/#" },
         { label: "Pesan Ruangan", isActive: true },
         
     ] : [
