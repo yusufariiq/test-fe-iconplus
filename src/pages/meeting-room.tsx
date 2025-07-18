@@ -1,4 +1,4 @@
-import { ArrowLeft, Plus } from "lucide-react"
+import { ChevronLeft, Plus } from "lucide-react"
 import { Button } from "../components/ui/button"
 import { useState } from "react"
 import Breadcrumbs from "../components/common/breadcrumbs"
@@ -37,9 +37,9 @@ export function MeetingRoom() {
             <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-4">
                     {showBookingForm && (
-                        <button onClick={handleBack} className="p-2 hover:bg-gray-200 rounded-md transition-colors">
-                            <ArrowLeft className="h-5 w-5 text-gray-600" />
-                        </button>
+                        <Button onClick={handleBack} className="p-2 rounded-md transition-colors">
+                            <ChevronLeft className="h-5 w-5 text-white" />
+                        </Button>
                     )}
                     <div>
                         <h1 className="text-[28px] font-bold text-gray-900 mb-2">Ruang Meeting</h1>
@@ -47,7 +47,7 @@ export function MeetingRoom() {
                 </div>
                 
                 {!showBookingForm && (
-                    <Button onClick={handleBookRoom} className="flex gap-2 hover:bg-[#273F4F]">
+                    <Button onClick={handleBookRoom} className="flex gap-2">
                         <Plus className="h-4 w-4" />
                         Pesan Ruangan
                     </Button>
