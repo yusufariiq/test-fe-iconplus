@@ -1,12 +1,17 @@
 import './App.css'
+import Navbar from './components/common/navbar'
+import Sidebar from './components/common/sidebar'
+import { MeetingRoom } from './pages/meeting-room'
 
 function App() {
 
   return (
     <>
-      <h1 className="text-4xl font-bold underline">
-        Hello world!
-      </h1>
+      <Navbar />
+      <div className="flex">
+        <Sidebar/>
+        <MeetingRoom/>
+      </div>
     </>
   )
 }
