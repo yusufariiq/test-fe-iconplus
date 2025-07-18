@@ -2,7 +2,7 @@ import { ChevronLeft, Plus } from "lucide-react"
 import { Button } from "../components/ui/button"
 import { useState } from "react"
 import Breadcrumbs from "../components/common/breadcrumbs"
-import { BookingForm } from "../components/common/booking-form"
+import BookingForm from "../components/common/booking-form"
 
 export function MeetingRoom() {
     const [showBookingForm, setShowBookingForm] = useState(false)
