@@ -21,7 +21,7 @@ export default function Sidebar({ activeItem = "home" }: SidebarProps) {
   ]
 
   return (
-    <aside className="w-20 bg-white border-r border-gray-200 flex flex-col">
+    <aside className="min-h-screen w-20 bg-white border-r border-gray-200 flex flex-col">
       <div className="p-4 space-y-2">
         {navigationItems.map((item) => {
           const Icon = item.icon
