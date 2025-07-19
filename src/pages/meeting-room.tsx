@@ -49,7 +49,7 @@ export function MeetingRoom() {
                 {!showBookingForm && (
                     <Button onClick={handleBookRoom} className="flex gap-2">
                         <Plus className="h-4 w-4" />
-                        Pesan Ruangan
+                        <span className="max-sm:hidden">Pesan Ruangan</span>
                     </Button>
                 )}
             </div>
