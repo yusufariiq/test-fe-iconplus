@@ -1,69 +1,106 @@
-# React + TypeScript + Vite
+# Sistem Pemesanan Ruang Meeting
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplikasi web berbasis React untuk memesan ruang rapat yang dibuat dengan TypeScript, Vite, dan Tailwind CSS.
 
-Currently, two official plugins are available:
+## Prerequisites
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Node.js (v16 or higher)
+- npm or yarn or pnpm package manager
 
-## Expanding the ESLint configuration
+## Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1. Clone the repository:
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+git clone https://github.com/yusufariiq/test-fe-iconplus
+cd test-fe-iconplus
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Install dependencies:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
+
+## Environment Setup
+
+Create a `.env` file in the root directory and add the following environment variables:
+
+```env
+VITE_UNIT=<your-unit-api-endpoint>
+VITE_MEETING_ROOM=<your-meeting-room-api-endpoint>
+VITE_JENIS_KONSUMSI=<your-consumption-type-api-endpoint>
+```
+
+Replace the placeholder URLs with your actual API endpoints.
+
+## Running the Project
+
+### Development Mode
+
+```bash
+npm run dev
+```
+
+The application will be available at `http://localhost:5173`
+
+### Build for Production
+
+```bash
+npm run build
+```
+
+## Project Structure
+
+```
+src
+├── App.css
+├── App.tsx
+├── assets
+│   └── react.svg
+├── components
+│   ├── common
+│   │   ├── booking-form.tsx
+│   │   ├── breadcrumbs.tsx
+│   │   ├── loading.tsx
+│   │   ├── navbar.tsx
+│   │   └── sidebar.tsx
+│   └── ui
+│       └── button.tsx
+├── constants
+│   ├── timeRules.ts
+│   └── timeSlots.ts
+├── hooks
+│   ├── useBookingData.ts
+│   └── useBookingForm.ts
+├── main.tsx
+├── pages
+│   └── meeting-room.tsx
+├── services
+│   └── bookingServices.ts
+├── types
+│   └── booking.ts
+├── utils
+│   └── utils.ts
+└── vite-env.d.ts
+```
+
+## Features
+
+- Pemilihan unit dan ruang rapat
+- Pemesanan tanggal dan waktu dengan validasi
+- Manajemen jumlah peserta
+- Pemilihan jenis konsumsi otomatis berdasarkan waktu rapat
+- Perhitungan total biaya secara otomatis berdasarkan jumlah partisipan
+- Validasi formulir
+
+## Technologies Used
+
+- **React** - Frontend framework
+- **TypeScript** - Type safety
+- **Vite** - Build tool and dev server
+- **Tailwind CSS** - Styling
+- **React Router** - Client-side routing
+- **Axios** - HTTP client
+- **React Hot Toast** - Toast notifications
+- **Lucide React** - Icons
