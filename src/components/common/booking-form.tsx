@@ -21,7 +21,7 @@ export default function BookingForm({ onCancel, onSave }: BookingFormProps) {
     const handleSubmit = () => {
         if (validateForm()) {
           onSave(formData)
-          toast.success('Ruang meeting berhasil di book')
+          toast.success('Ruang meeting berhasil dipesan')
         }
     }
 
