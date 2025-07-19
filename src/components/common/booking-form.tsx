@@ -193,7 +193,7 @@ export default function BookingForm({ onCancel, onSave }: BookingFormProps) {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div>
                         <label className="block text-sm font-medium text-gray-700 mb-2">
-                            Nominal Konsumsi <span className="text-sm text-gray-500">(Terisi otomatis)</span>
+                            Nominal Konsumsi
                         </label>
                         <div className="flex">
                             <span className="inline-flex items-center px-3 py-2 border border-r-0 border-gray-300 bg-gray-50 text-gray-500 text-sm rounded-l-md">
